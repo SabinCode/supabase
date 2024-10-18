@@ -1,18 +1,32 @@
+import { prisma } from "@/db"
 import { options } from "@/options"
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
+import { NextResponse } from "next/server"
 import React from "react"
+import {CreateProductForm} from "./products/CreateProductForm"
+import DeleteProduct from "./products/DeleteProduct"
+import Products from "../(customerFacing)/products/page"
+import { ListProduct } from "./products/ListProduct"
 
 const Admin = async() => {
     const Session = await getServerSession(options)
+    
 
 
     if(!Session) {
         redirect("/login")
     }
+
+
+        
+    
     return (
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">  
         <h1>protetected Admin Page</h1>
+        <CreateProductForm  />
+        <ListProduct />
+      
         </div>
     )
 }

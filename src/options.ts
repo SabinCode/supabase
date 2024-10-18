@@ -1,6 +1,6 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "./db";
-import GoogleProvider from "next-auth/providers/google";
+import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
 
 export const options = {
     adapter: PrismaAdapter(prisma),
@@ -10,6 +10,13 @@ export const options = {
       clientSecret: process.env.GOOGLE_SECRET as string,
     }),
   ],
+  // callbacks: {
+  //   async jwt({ token, user, account, profile, isNewUser }: {profile: GoogleProfile, isNewUser: boolean, user: any, token: any, account: any}) {
+  //     // Add the role property to the user object
+  //     token.role = "ADMIN";
+  //     return token;
+  //   },
+  // },
 }
 
 
