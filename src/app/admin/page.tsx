@@ -1,12 +1,14 @@
-import { prisma } from "@/db"
+"use server"
+
+
+
 import { options } from "@/options"
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
-import { NextResponse } from "next/server"
+
 import React from "react"
 import {CreateProductForm} from "./products/CreateProductForm"
-import DeleteProduct from "./products/DeleteProduct"
-import Products from "../(customerFacing)/products/page"
+
 import { ListProduct } from "./products/ListProduct"
 
 const Admin = async() => {

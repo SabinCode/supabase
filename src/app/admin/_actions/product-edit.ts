@@ -22,6 +22,14 @@ export const editProduct = async (product: Product) => {
             data: {
                 name: product.name,
                 price: product.price,
+                size: product.size,
+                stock: product.stock,
+                slug: product.slug,
+                brand: product.brand,
+                color: product.color,
+                description: product.description,
+                category: product.category,
+                
                 imagePath: product.imagePath,
                 filePath: product.filePath
             }

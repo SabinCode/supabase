@@ -186,6 +186,7 @@ export async function createProductWithImages(formData: FormData) {
     const size = formData.get("size");
     const stock = parseInt(formData.get("stock") as string);
     const brand = formData.get("brand");
+    const id = formData.get("id");
 
     // const mainImage = formData.get("mainImage") as File;
 
@@ -221,6 +222,7 @@ export async function createProductWithImages(formData: FormData) {
         color: color as string,
         category: category as string,
         brand: brand as string,
+        id: id as string,
 
         imagePath: mainImageUrl,
         filePath: detailedImagesUrl.join(","),
